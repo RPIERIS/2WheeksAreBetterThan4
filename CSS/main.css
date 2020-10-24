@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  background:rgb(2, 156, 220);
+}
+
+li {
+  /* padding: 10px; */
+  margin: 10px;
+
+}

@@ -1,11 +1,50 @@
-.navbar {
-  display: flex;
-  flex-wrap: wrap;
-  background:rgb(2, 156, 220);
+body {
+  margin: 0;
+  background-color: rgb(208, 219, 159);;
 }
 
-li {
-  /* padding: 10px; */
-  margin: 10px;
+/* ===========
+navigation bar
+=============*/
 
+.navbar {
+  display: block;
+  background:rgb(2, 156, 220);
+  align-items: center;
+  padding: 5px 0;
+
+  /* add a media query that makes it flex here */
+}
+
+.select {
+  display: block;
+  margin: 10px 5px 10px 5px;
+  background-color: rgb(255, 69, 81);
+  padding: 5px;
+  text-align: center;
+}
+
+.select:hover {
+  background-color: rgb(208, 219, 159);
+}
+
+
+/* ===========
+header area
+=============*/
+
+header {
+  text-align: center;
+}
+
+/* ===========
+main
+=============*/
+
+figure {
+  width: 90%;
+}
+
+img {
+  width: 90%;
 }

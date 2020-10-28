@@ -28,7 +28,6 @@ navigation bar
   background-color: rgb(208, 219, 159);
 }
 
-
 /* ===========
 header area
 =============*/
@@ -41,10 +40,38 @@ header {
 main
 =============*/
 
-figure {
-  width: 90%;
+main{
+  padding: 20px;
 }
 
 img {
-  width: 90%;
+  width: 100%;
+}
+
+section {
+  margin: 15px 0;
+}
+
+.flex_image {
+  text-align: center;
+}
+
+
+@media screen and (min-width: 700px) {
+  .container_new {
+    display: flex;
+  } .flex_text {
+    width: 50%;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container_new {
+    display: flex;
+    padding: 0 20%;
+  } .flex_text {
+    width: 50%;
+    padding: 10px;
+  }
 }

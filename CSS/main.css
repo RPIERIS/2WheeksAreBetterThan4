@@ -84,6 +84,7 @@ section {
 @media screen and (min-width: 700px) {
   .container_new {
     display: flex;
+    margin: 75px 0;
   } .flex_text {
     width: 50%;
     padding: 10px;
@@ -93,7 +94,7 @@ section {
 @media screen and (min-width: 1200px) {
   .container_new {
     display: flex;
-    padding: 0 20%;
+    padding: 75 20%;
   } .flex_text {
     width: 50%;
     padding: 10px;

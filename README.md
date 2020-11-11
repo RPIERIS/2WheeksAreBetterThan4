@@ -21,8 +21,9 @@
 
 As a cycling enthusiast I am going to create a landing page for different types of bicycles that can be used. It will carry out the following
 
-* Each section would be a different type of bicycle with a description of it and an image
-* It will have a Nav bar horizontally at the top that will be fixed as the page scrolls
+### Aims
+* Each section would be a different type of bicycle with a description of it and an image (done)
+* It will have a Nav bar horizontally at the top that will be fixed as the page scrolls (d)
 * The navbar will disappear if not in use once the user scrolls down and does not touch the screen. This will be after a delay of 2 seconds
 * The nav bar will reference 6 bicycle types. Selecting each will take you to the relevant section by scrolling the page
 * (Optional) When scrolled to the section the colour of the page will match that of the picture

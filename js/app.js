@@ -75,6 +75,9 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
+    setTimeout (function(){
+      mybutton.style.display = "none";
+    }, 5000);
   } else {
     mybutton.style.display = "none";
   }
@@ -83,4 +86,9 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+
+function timedbutton() {
+  const x = document.getElementById("myBtn");
+  setTimeout(function(){x.style.display = "none"}, 2000);
 }

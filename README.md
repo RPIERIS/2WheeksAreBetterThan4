@@ -37,7 +37,7 @@ As a cycling enthusiast I am going to create a landing page for different types 
 ## navBar
 Initially code was created for each nav list item that would go to the relevant section. The navbar had 6 items on it.
 
-![Image of Navbar](/images/Navbar.jpg)
+![Image of Navbar](/images/Navbar.JPG)
 
 The initial code had something similar to the below for each section. This meant that this was repeated 6 times.
 
@@ -61,4 +61,4 @@ navSelect.addEventListener('click',function(e){
   let contactNewLoc = document.getElementById(newName);
   contactNewLoc.scrollIntoView();
 });
-``` 
+```

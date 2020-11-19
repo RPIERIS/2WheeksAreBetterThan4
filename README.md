@@ -23,7 +23,7 @@ As a cycling enthusiast I am going to create a landing page for different types 
 
 ### Aims
 * Each section would be a different type of bicycle with a description of it and an image (done)
-* It will have a Nav bar horizontally at the top that will be fixed as the page scrolls (d)
+* It will have a Nav bar horizontally at the top that will be fixed as the page scrolls (done)
 * The navbar will disappear if not in use once the user scrolls down and does not touch the screen. This will be after a delay of 2 seconds
 * The nav bar will reference 6 bicycle types. Selecting each will take you to the relevant section by scrolling the page
 * (Optional) When scrolled to the section the colour of the page will match that of the picture
@@ -31,3 +31,34 @@ As a cycling enthusiast I am going to create a landing page for different types 
 * The scroll up icon will be disappear if the user does not interact with the screen
 * When the user scrolls up it will do so gradually
 * There will be a Credits section which will have details about me with links to my social media
+
+## Coding challenges
+
+## navBar
+Initially code was created for each nav list item that would go to the relevant section. The navbar had 6 items on it.
+
+![Image of Navbar](/images/Navbar.jpg)
+
+The initial code had something similar to the below for each section. This meant that this was repeated 6 times.
+
+```javascript
+const roadBikeSelect = document.querySelector('.road-bike');
+const roadBikeLoc = document.getElementById('road-bike')
+
+roadBikeSelect.addEventListener('click', function(){
+  roadBikeLoc.scrollIntoView({
+    behaviour: "smooth"
+  });
+});
+```
+This created more work if a new item was to be added or a change be carried out on the HTML Navbar. The initial difficulty is figuring out that an event target could be recognized inside a block of HTML code and this could be captured via the use of one added event listener. Then the difficulty for me was that I had used two classes within my sections in the class that I chose. My solution was to use the splice to get details of the second. This could then be used to go to the relevant section
+
+```javascript
+const navSelect = document.getElementById('navBar');
+
+navSelect.addEventListener('click',function(e){
+  let newName = e.target.className.slice(7) // as the specific name of the bike starts from the 7th character
+  let contactNewLoc = document.getElementById(newName);
+  contactNewLoc.scrollIntoView();
+});
+``` 

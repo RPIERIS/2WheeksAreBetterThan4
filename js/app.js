@@ -16,7 +16,7 @@ navSelect.addEventListener('click',function(e){
 // back to top button
 //--------------------
 
-// below code was taken and adapted from w3school
+// below code was taken and adapted frin w3school
 //https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
 
 mybutton = document.getElementById("myBtn");

@@ -2,78 +2,21 @@
 // navbar and sections
 //--------------------
 
-// I have written this section but I think there might
-// a simpler way with less code to get to the relevant
-// sections
+// code was refactored to go to a specific section
 
-const contactSelect = document.querySelector('.contact');
-const contactLoc = document.getElementById('contact')
+const navSelect = document.getElementById('navBar');
 
-contactSelect.addEventListener('click', function(){
-  contactLoc.scrollIntoView({
-    behaviour: "smooth"
-  });
+navSelect.addEventListener('click',function(e){
+  let newName = e.target.className.slice(7) // as the specific name of the bike starts from the 7th character
+  let contactNewLoc = document.getElementById(newName);
+  contactNewLoc.scrollIntoView();
 });
-
-
-const roadBikeSelect = document.querySelector('.road-bike');
-const roadBikeLoc = document.getElementById('road-bike')
-
-roadBikeSelect.addEventListener('click', function(){
-  roadBikeLoc.scrollIntoView({
-    behaviour: "smooth"
-  });
-});
-
-roadBikeLoc.addEventListener("mouseover", function(event) {
-  setTimeout (function(){
-  roadBikeSelect.style.background = "rgb(208, 219, 159)";
-},1000);
-});
-
-
-const touringBikeSelect = document.querySelector('.touring-bike');
-const touringBikeLoc = document.getElementById('touring-bike')
-
-touringBikeSelect.addEventListener('click', function(){
-  touringBikeLoc.scrollIntoView({
-    behaviour: "smooth"
-  });
-});
-
-const hybridBikeSelect = document.querySelector('.hybrid-bike');
-const hybridBikeLoc = document.getElementById('hybrid-bike')
-
-hybridBikeSelect.addEventListener('click', function(){
-  hybridBikeLoc.scrollIntoView({
-    behaviour: "smooth"
-  });
-});
-
-const dirtBikeSelect = document.querySelector('.dirt-bike');
-const dirtBikeLoc = document.getElementById('dirt-bike')
-
-dirtBikeSelect.addEventListener('click', function(){
-  dirtBikeLoc.scrollIntoView({
-    behaviour: 'smooth'
-  })
-})
-
-const dutchBikeSelect = document.querySelector('.dutch-bike');
-const dutchBikeLoc = document.getElementById('dutch-bike')
-
-dutchBikeSelect.addEventListener('click', function(){
-  dutchBikeLoc.scrollIntoView({
-    behaviour: 'smooth'
-  })
-})
-
 
 //--------------------
 // back to top button
 //--------------------
 
-// below code was taken and adaopted frin w3school
+// below code was taken and adapted from w3school
 //https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
 
 mybutton = document.getElementById("myBtn");
@@ -98,6 +41,7 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+  mybutton.style.display = "block";
   myNav.style.display = "flex";
 }
 
@@ -109,3 +53,10 @@ function timedbutton() {
 myNav.addEventListener("mouseover", function(event) {
   myNav.style.display = "flex";
 },false);
+
+document.onclick = function(e) {
+  mybutton.style.display = "block";
+  myNav.style.display = "flex";
+  // let coords = e.clientX + ":" + e.clientY;
+  // console.log(coords);
+}

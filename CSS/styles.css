@@ -35,6 +35,13 @@ navigation bar
   background-color: rgb(208, 219, 159);
 }
 
+/* active navigation */
+
+.navbar.scroll div.active{
+  color: yellow;
+  border-bottom: 2px solid black;
+}
+
 
 @media screen and (min-width:750px) {
   .navbar {
@@ -103,10 +110,13 @@ section {
 @media screen and (min-width: 1200px) {
   .container_new {
     display: flex;
-    padding: 60px 20%;
+    padding: 5% 20%;
   } .flex_text {
     width: 50%;
     padding: 10px;
+    font-size: 20px
+  } img {
+    height: 500px;
   }
 }
 

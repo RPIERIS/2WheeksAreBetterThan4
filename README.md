@@ -34,7 +34,7 @@ As a cycling enthusiast I am going to create a landing page for different types 
 
 ## Coding challenges
 
-## navBar
+## navBar scrolling
 Initially code was created for each nav list item that would go to the relevant section. The navbar had 6 items on it.
 
 ![Image of Navbar](/images/Navbar.JPG)
@@ -60,5 +60,39 @@ navSelect.addEventListener('click',function(e){
   let newName = e.target.className.slice(7) // as the specific name of the bike starts from the 7th character
   let contactNewLoc = document.getElementById(newName);
   contactNewLoc.scrollIntoView();
+});
+```
+## navBar highlighting
+
+Initially the attempt was to figure out how the scroll works and how it picks up where it was. The key to understanding this was the following method;
+
+[getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+
+It is possible to select the size of an element using this method using the top and bottom properties.
+
+The aim of this exercise was to connect the sections on the main page to the nav elements. The getBoundingClientRect() method would identify the position relevant section. Then the id of this section would be used to add a new class of 'active-nav' to the relevant nav with a corresponding class of the id of the section. This would then be removed once the getBoundingClientRect() left that section.
+
+```javascript
+let navigLink = document.querySelectorAll('.select');
+let sectionList = document.querySelectorAll('.container_new');
+
+window.addEventListener('scroll', function(){
+    for (list of sectionList) {
+      let position = list.getBoundingClientRect();
+
+      if (position.top <= 150 && position.bottom >= 150) {
+        for (const navig of navigLink) {
+          if(navig.classList.contains(list.id)) {
+            navig.classList.add('active-nav');
+          }
+        }
+      } else {
+        for (const navig of navigLink) {
+          if (navig.classList.contains(list.id)){
+            navig.classList.remove('active-nav');
+          }
+        }
+      }
+    }
 });
 ```

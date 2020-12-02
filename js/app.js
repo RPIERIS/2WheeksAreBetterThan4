@@ -1,4 +1,26 @@
 //--------------------
+// dynamic navbar
+//--------------------
+
+const navBar = document.querySelector('#navBar');
+let navSectionList = document.querySelectorAll('.container_new');
+console.log(navSectionList);
+
+for (const section of navSectionList) {
+  const sectionName = section.id;
+
+  // sectionName.replace('-', ' ')
+  let navElement = document.createElement('li');
+  let newContent = document.createTextNode(sectionName);
+  navElement.appendChild(newContent);
+  navElement.classList.add('select');
+  navElement.classList.add(section.id);
+  console.log(navElement);
+  navBar.appendChild(navElement);
+}
+
+
+//--------------------
 // navbar and sections
 //--------------------
 
@@ -57,3 +79,18 @@ window.addEventListener('scroll', function(){
       }
     }
 });
+
+//---------------------
+// nav timeout
+//---------------------
+
+myNav = document.getElementById("navBar");
+
+function hideNav(){
+  if (window.scrollY >= 44){
+    console.log(window.scrollY);
+    setTimeout(function(){
+      myNav.style.display = 'none';
+    }, 1000);
+  }
+}

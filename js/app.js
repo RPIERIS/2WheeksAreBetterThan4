@@ -8,7 +8,9 @@ console.log(navSectionList);
 
 for (const section of navSectionList) {
   const sectionName = section.id;
-
+  let titleLoc = section.getElementsByTagName('H2');
+  let titleName = titleLoc.textContent;
+  console.log(titleName);
   // sectionName.replace('-', ' ')
   let navElement = document.createElement('li');
   let newContent = document.createTextNode(sectionName);

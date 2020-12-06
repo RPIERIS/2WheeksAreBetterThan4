@@ -4,20 +4,15 @@
 
 const navBar = document.querySelector('#navBar');
 let navSectionList = document.querySelectorAll('.container_new');
-console.log(navSectionList);
 
 for (const section of navSectionList) {
   const sectionName = section.id;
-  let titleLoc = section.getElementsByTagName('H2');
-  let titleName = titleLoc.textContent;
-  console.log(titleName);
-  // sectionName.replace('-', ' ')
+  let titleLoc = section.getElementsByTagName('H2')[0].innerHTML;
   let navElement = document.createElement('li');
-  let newContent = document.createTextNode(sectionName);
+  let newContent = document.createTextNode(titleLoc);
   navElement.appendChild(newContent);
   navElement.classList.add('select');
   navElement.classList.add(section.id);
-  console.log(navElement);
   navBar.appendChild(navElement);
 }
 

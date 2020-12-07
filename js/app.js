@@ -39,6 +39,7 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (window.scrollY >= 44) {
     mybutton.style.display = "block";
+    setTimeout
   } else {
     mybutton.style.display = "none";
   }
@@ -62,6 +63,7 @@ window.addEventListener('scroll', function(){
       let position = list.getBoundingClientRect();
 
       if (position.top <= 150 && position.bottom >= 150) {
+        list.classList.add('active-section');
         for (const navig of navigLink) {
           if(navig.classList.contains(list.id)) {
             navig.classList.add('active-nav');
@@ -69,6 +71,7 @@ window.addEventListener('scroll', function(){
         }
       } else {
         for (const navig of navigLink) {
+          list.classList.remove('active-section');
           if (navig.classList.contains(list.id)){
             navig.classList.remove('active-nav');
           }
@@ -76,18 +79,3 @@ window.addEventListener('scroll', function(){
       }
     }
 });
-
-//---------------------
-// nav timeout
-//---------------------
-
-myNav = document.getElementById("navBar");
-
-function hideNav(){
-  if (window.scrollY >= 44){
-    console.log(window.scrollY);
-    setTimeout(function(){
-      myNav.style.display = 'none';
-    }, 1000);
-  }
-}

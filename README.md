@@ -96,3 +96,25 @@ window.addEventListener('scroll', function(){
     }
 });
 ```
+
+## Dynamic NavBar
+
+One requirement that was not initially captured was that the Navbar itself needed to be dynamically created using Javascript. This was highlighted in the review.
+
+The below code was created on a <ul> tag that was created. It would look for the various sections on the main section and create a nav <li> that would take on the text content of the <h2> element within the section.
+
+```javascript
+const navBar = document.querySelector('#navBar');
+let navSectionList = document.querySelectorAll('.container_new');
+
+for (const section of navSectionList) {
+  const sectionName = section.id;
+  let titleLoc = section.getElementsByTagName('H2')[0].innerHTML;
+  let navElement = document.createElement('li');
+  let newContent = document.createTextNode(titleLoc);
+  navElement.appendChild(newContent);
+  navElement.classList.add('select');
+  navElement.classList.add(section.id);
+  navBar.appendChild(navElement);
+}
+```

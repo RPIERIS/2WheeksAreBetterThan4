@@ -105,6 +105,9 @@ section {
   text-align: center;
 }
 
+.active-section {
+  background: rgb(255, 69, 81);
+}
 
 @media screen and (min-width: 700px) {
   .container_new {

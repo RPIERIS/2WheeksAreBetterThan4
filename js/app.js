@@ -39,13 +39,13 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (window.scrollY >= 44) {
     mybutton.style.display = "block";
-    setTimeout
+    // setTimeout(hideTopNav,3000)
   } else {
     mybutton.style.display = "none";
   }
 }
 
-function topFunction() {
+function moveToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
   mybutton.style.display = "block";
@@ -79,3 +79,17 @@ window.addEventListener('scroll', function(){
       }
     }
 });
+
+//------------
+// hide navbar func
+//------------
+
+function hideTopNav(){
+  navBar.style.display = 'none';
+  console.log('the nav bar is gone!')
+}
+
+function showTopNav(){
+  navBar.style.display = 'flex';
+  console.log('the nav bar is back!')
+}
